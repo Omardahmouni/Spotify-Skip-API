@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+ <html lang="en">
+     <head>
+         <title> Spotify  skip API "SSA"</title>
+     </head>
+     <body>
+         <h1>Spotify music skip button prediction</h1>
+         <div id="form">
+             <form action="{{ url_for('predict')}}" method="POST">
+                 <div id="features">
+                     <div class="triple">
+                         <input type="text" class="feature" id="premium" placeholder="premium" name="premium" required>
+                         <input type="text" class="feature" id="us_popularity_estimate" placeholder="us_popularity_estimate" name="us_popularity_estimate" required>
+                         <input type="text" class="feature" id="bounciness" placeholder="bounciness" name="bounciness" required>
+                     </div>
+                     <div class="triple">
+                         <input type="text" class="feature" id="energy" placeholder="energy" name="energy" required>
+                         <input type="text" class="feature" id="liveness" placeholder="liveness" name="liveness" required>
+                         <input type="text" class="feature" id="time_signature" placeholder="time_signature" name="time_signature" required>
+                     </div>
+                     <div class="triple">
+                         <input type="text" class="feature" id="acoustic_vector_0" placeholder="acoustic_vector_0" name="acoustic_vector_0" required>
+                         <input type="text" class="feature" id="acoustic_vector_3" placeholder="acoustic_vector_3" name="acoustic_vector_3" required>
+                         <input type="text" class="feature" id="acoustic_vector_5" placeholder="acoustic_vector_5" name="acoustic_vector_5" required>
+                     </div>
+                     <div class="triple">
+                         <input type="text" class="feature" id="start_fwdbtn" placeholder="start_fwdbtn" name="start_fwdbtn" required>
+                         <input type="text" class="feature" id="start_trackdone" placeholder="start_trackdone" name="start_trackdone" required>
+                         <input type="text" class="feature" id="end_backbtn" placeholder="end_backbtn" name="end_backbtn" required>
+                     </div>
+                     <div class="triple">
+                         <input type="text" class="feature" id="end_endplay" placeholder="end_endplay" name="end_endplay" required>
+                         <input type="text" class="feature" id="end_fwdbtn" placeholder="end_fwdbtn" name="end_fwdbtn" required>
+                         <input type="text" class="feature" id="end_trackdone" placeholder="end_trackdone" name="end_trackdone" required>
+                     </div>
+                 </div>
+                 <div id="button">
+                     <input type="submit" value="Predict">
+                 </div>
+             </form>
+         </div>
+         <p>{{ prediction }}</p>
+     </body>
+ </html>
